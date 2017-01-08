@@ -1,37 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b028658f-7835-4fd3-91ab-adc281fe0f75" name="Default" comment="Dodanie funkcjonalności &quot;Dodaj kierowcę&quot;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/view/lista-kierowcy.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/view/lista-oc.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/view/lista-pojazdy.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/view/lista-zdarzenia.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/KierowcyController.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/KierowcyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/OcController.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/OcController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/PojazdyController.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/PojazdyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/ZdarzeniaController.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/controller/ZdarzeniaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/dao/KierowcyDAO.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/dao/KierowcyDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/dao/KierowcyDAOImpl.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/dao/KierowcyDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/service/KierowcyService.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/service/KierowcyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/service/KierowcyServiceImpl.class" afterPath="$PROJECT_DIR$/target/CEPiK/WEB-INF/classes/pl/cepik/service/KierowcyServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/controller/KierowcyController.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/controller/KierowcyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/controller/OcController.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/controller/OcController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/controller/PojazdyController.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/controller/PojazdyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/controller/ZdarzeniaController.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/controller/ZdarzeniaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/dao/KierowcyDAO.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/dao/KierowcyDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/dao/KierowcyDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/dao/KierowcyDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/service/KierowcyService.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/service/KierowcyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pl/cepik/service/KierowcyServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/pl/cepik/service/KierowcyServiceImpl.class" />
+    <list default="true" id="b028658f-7835-4fd3-91ab-adc281fe0f75" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/KierowcyController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/KierowcyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/OcController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/OcController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/PojazdyController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/PojazdyController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/ZdarzeniaController.java" afterPath="$PROJECT_DIR$/src/main/java/pl/cepik/controller/ZdarzeniaController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/form-kierowcy.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/kierowcy-dodaj-form.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lista-kierowcy.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/kierowcy-lista.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lista-oc.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/oc-lista.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lista-pojazdy.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/pojazdy-lista.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lista-zdarzenia.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/zdarzenia-lista.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -919,7 +890,7 @@
       <workItem from="1483887921814" duration="146000" />
       <workItem from="1483888817805" duration="685000" />
       <workItem from="1483890576575" duration="1110000" />
-      <workItem from="1483910994895" duration="3517000" />
+      <workItem from="1483910994895" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="Dodanie pliku cepik.properties.">
       <created>1483881989374</created>
@@ -935,11 +906,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483914084123</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ujednolicenie nazw widoków - zmiana konwencji nazewniczej.">
+      <created>1483914629885</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1483914629885</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20062000" />
+    <option name="totallyTimeSpent" value="20515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -966,7 +944,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319239" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3319239" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1028,7 +1006,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dodanie pliku cepik.properties." />
     <MESSAGE value="Dodanie funkcjonalności &quot;Dodaj kierowcę&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodanie funkcjonalności &quot;Dodaj kierowcę&quot;" />
+    <MESSAGE value="Ujednolicenie nazw widoków - zmiana konwencji nazewniczej." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ujednolicenie nazw widoków - zmiana konwencji nazewniczej." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
