@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface KierowcyService {
     public List<Kierowcy> getKierowcy();
+
+    void zapiszKierowce(Kierowcy kierowca);
 }

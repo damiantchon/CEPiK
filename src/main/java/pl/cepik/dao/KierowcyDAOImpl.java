@@ -20,8 +20,14 @@ public class KierowcyDAOImpl implements KierowcyDAO {
     @Override
     public List<Kierowcy> getKierowcy() {
         Session currentSession = sessionFactory.getCurrentSession();
-        Query<Kierowcy> theQuery = currentSession.createQuery("from Kierowcy", Kierowcy.class);
+        Query<Kierowcy> theQuery = currentSession.createQuery("from Kierowcy order by nazwisko", Kierowcy.class);
         List<Kierowcy> kierowcy = theQuery.getResultList();
         return kierowcy;
+    }
+
+    @Override
+    public void zapiszKierowce(Kierowcy kierowca) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        currentSession.save(kierowca);
     }
 }

@@ -14,20 +14,25 @@
 </head>
 <body>
 <div class="container">
-    <h2> Lista kierowców </h2>
+    <h2> Lista kierowców
+
+    <button type="button"  class="btn btn-primary" onclick="window.location.href='dodajKierowce'; return false;">
+        Dodaj kierowcę
+    </button>
+    </h2>
     <table class="table table-striped">
         <tr>
             <th>IdKierowcy</th>
-            <th>Imie</th>
             <th>Nazwisko</th>
+            <th>Imie</th>
             <th>EMail</th>
             <th>CzyPosiadaUprawnienia</th>
         </tr>
         <c:forEach var="tempKierowca" items="${Kierowcy}">
             <tr>
                 <td>${tempKierowca.idKierowcy}</td>
-                <td>${tempKierowca.imie}</td>
                 <td>${tempKierowca.nazwisko}</td>
+                <td>${tempKierowca.imie}</td>
                 <td>${tempKierowca.eMail}</td>
                 <td>${tempKierowca.czyPosiadaUprawnienia}</td>
             </tr>

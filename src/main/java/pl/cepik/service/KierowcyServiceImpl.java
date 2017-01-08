@@ -22,4 +22,10 @@ public class KierowcyServiceImpl implements KierowcyService {
     public List<Kierowcy> getKierowcy() {
         return kierowcyDAO.getKierowcy();
     }
+
+    @Override
+    @Transactional
+    public void zapiszKierowce(Kierowcy kierowca) {
+        kierowcyDAO.zapiszKierowce(kierowca);
+    }
 }
