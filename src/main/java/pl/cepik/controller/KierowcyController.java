@@ -25,14 +25,14 @@ public class KierowcyController {
         List<Kierowcy> kierowcy = kierowcyService.getKierowcy();
         theModel.addAttribute("Kierowcy", kierowcy);
 
-        return "lista-kierowcy";
+        return "kierowcy-lista";
     }
 
     @GetMapping("/dodajKierowce")
     public String dodajKierowce(Model theModel){
         Kierowcy kierowca = new Kierowcy();
         theModel.addAttribute("kierowca", kierowca);
-        return "form-kierowcy";
+        return "kierowcy-dodaj-form";
     }
 
     @PostMapping("/zapiszKierowce")

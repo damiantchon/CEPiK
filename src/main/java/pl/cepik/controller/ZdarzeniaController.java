@@ -25,6 +25,6 @@ public class ZdarzeniaController {
         List<Zdarzenia> zdarzenia = zdarzeniaService.getZdarzenia();
         theModel.addAttribute("Zdarzenia",zdarzenia);
 
-        return "lista-zdarzenia";
+        return "zdarzenia-lista";
     }
 }

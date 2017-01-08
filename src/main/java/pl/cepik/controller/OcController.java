@@ -23,6 +23,6 @@ public class OcController {
         List<Oc> oc = ocService.getOc();
         theModel.addAttribute("Oc", oc);
 
-        return "lista-oc";
+        return "oc-lista";
     }
 }

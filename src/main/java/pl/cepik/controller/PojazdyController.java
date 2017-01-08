@@ -24,6 +24,6 @@ public class PojazdyController {
         List<Pojazdy> pojazdy = pojazdyService.getPojazdy();
         theModel.addAttribute("Pojazdy", pojazdy);
 
-        return "lista-pojazdy";
+        return "pojazdy-lista";
     }
 }
