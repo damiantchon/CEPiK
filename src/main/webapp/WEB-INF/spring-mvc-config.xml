@@ -16,6 +16,7 @@
 
 	<!-- Add support for component scanning -->
 	<context:component-scan base-package="pl.cepik" />
+	<context:property-placeholder location="classpath:cepik.properties"/>
 
 	<!-- Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
@@ -30,10 +31,10 @@
     <!-- Step 1: Define Database DataSource / connection pool -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
-        <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://s19.hekko.net.pl:3306/damtch_cepik?useSSL=false" />
-        <property name="user" value="damtch_user" />
-        <property name="password" value="StrongPassword123" />
+        <property name="driverClass" value="${db.driverClass}" />
+        <property name="jdbcUrl" value="${db.jdbcUrl}" />
+        <property name="user" value="${db.user}" />
+        <property name="password" value="${db.password}" />
 
         <!-- these are connection pool properties for C3P0 -->
         <property name="minPoolSize" value="5" />
