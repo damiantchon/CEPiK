@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="CEPiK:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="CEPiK.war">
-      <element id="artifact" artifact-name="CEPiK:war exploded" />
-    </root>
-  </artifact>
-</component>
