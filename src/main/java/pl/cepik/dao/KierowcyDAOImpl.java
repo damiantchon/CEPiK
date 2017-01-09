@@ -13,8 +13,12 @@ import java.util.List;
 @Repository
 public class KierowcyDAOImpl implements KierowcyDAO {
 
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public KierowcyDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
 
     @Override
@@ -28,6 +32,22 @@ public class KierowcyDAOImpl implements KierowcyDAO {
     @Override
     public void zapiszKierowce(Kierowcy kierowca) {
         Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.save(kierowca);
+        currentSession.saveOrUpdate(kierowca);
+    }
+
+    @Override
+    public Kierowcy getKierowcy(int idKierowcy) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Kierowcy kierowca = currentSession.get(Kierowcy.class, idKierowcy);
+        return kierowca;
+    }
+
+    @Override
+    public void usunKierowce(int idKierowcy) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query theQuery = currentSession.createQuery("delete from Kierowcy where idKierowcy=:idToDelete");
+        theQuery.setParameter("idToDelete", idKierowcy);
+        theQuery.executeUpdate();
+
     }
 }

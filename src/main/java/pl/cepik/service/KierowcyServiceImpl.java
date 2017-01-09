@@ -8,14 +8,15 @@ import pl.cepik.entity.Kierowcy;
 
 import java.util.List;
 
-/**
- * Created by Damian on 05.01.2017.
- */
 @Service
 public class KierowcyServiceImpl implements KierowcyService {
 
+    private final KierowcyDAO kierowcyDAO;
+
     @Autowired
-    private KierowcyDAO kierowcyDAO;
+    public KierowcyServiceImpl(KierowcyDAO kierowcyDAO) {
+        this.kierowcyDAO = kierowcyDAO;
+    }
 
     @Override
     @Transactional
@@ -27,5 +28,17 @@ public class KierowcyServiceImpl implements KierowcyService {
     @Transactional
     public void zapiszKierowce(Kierowcy kierowca) {
         kierowcyDAO.zapiszKierowce(kierowca);
+    }
+
+    @Override
+    @Transactional
+    public Kierowcy getKierowcy(int idKierowcy) {
+        return kierowcyDAO.getKierowcy(idKierowcy);
+    }
+
+    @Override
+    @Transactional
+    public void usunKierowce(int idKierowcy) {
+        kierowcyDAO.usunKierowce(idKierowcy);
     }
 }

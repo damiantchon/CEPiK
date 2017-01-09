@@ -22,19 +22,32 @@
     </h2>
     <table class="table table-striped">
         <tr>
-            <th>IdKierowcy</th>
+            <th>ID Kierowcy</th>
             <th>Nazwisko</th>
             <th>Imie</th>
-            <th>EMail</th>
-            <th>CzyPosiadaUprawnienia</th>
+            <th>E-mail</th>
+            <th>Uprawnienia</th>
+            <th>Akcja</th>
         </tr>
         <c:forEach var="tempKierowca" items="${Kierowcy}">
+            <c:url var="updateLink" value="/kierowcy/edytujKierowce">
+                <c:param name="IdKierowcy" value="${tempKierowca.idKierowcy}"/>
+            </c:url>
+
+            <c:url var="deleteLink" value="/kierowcy/usunKierowce">
+                <c:param name="IdKierowcy" value="${tempKierowca.idKierowcy}"/>
+            </c:url>
+
             <tr>
                 <td>${tempKierowca.idKierowcy}</td>
                 <td>${tempKierowca.nazwisko}</td>
                 <td>${tempKierowca.imie}</td>
                 <td>${tempKierowca.eMail}</td>
                 <td>${tempKierowca.czyPosiadaUprawnienia}</td>
+                <td>
+                    <a href="${updateLink}" class="btn btn-primary">Edytuj</a>
+                    <a href="${deleteLink}" class="btn btn-danger" onclick="if(!(confirm('Czy na pewno chcesz usunąć tego kierowcę?'))) return false">Usuń</a>
+                </td>
             </tr>
         </c:forEach>
     </table>

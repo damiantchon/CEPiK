@@ -15,8 +15,9 @@
 </head>
 <body>
     <div class="container">
-        <h2>Dodaj nowego kierowcę</h2>
+        <h2></h2>
         <form:form action="zapiszKierowce"  modelAttribute="kierowca" cssClass="form-horizontal" method="POST">
+            <form:hidden path="IdKierowcy"/>
             <div class="form-group">
                 <form:label path="Imie" for="imieInput" cssClass="control-label col-xs-2">Imię:</form:label><!--TODO-->
                 <div class="col-xs-10">
@@ -40,7 +41,7 @@
                 <div class="col-xs-2">
                     <form:select path="CzyPosiadaUprawnienia" id="uprawnieniaInput" cssClass="form-control">
                         <form:option value="TAK">TAK</form:option>
-                        <form:option value="TAK">NIE</form:option>
+                        <form:option value="NIE">NIE</form:option>
                     </form:select>
                 </div>
             </div>
