@@ -12,4 +12,8 @@ public interface KierowcyService {
     Kierowcy getKierowcy(int idKierowcy);
 
     void usunKierowce(int idKierowcy);
+
+    void zapiszEdytowanegoKierowce(Kierowcy kierowca);
+
+    List<Kierowcy> getKierowcyFiltrowana(Kierowcy kierowca);
 }

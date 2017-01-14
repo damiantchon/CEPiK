@@ -1,83 +1,96 @@
 package pl.cepik.entity;
 
 import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by Damian on 04.01.2017.
- */
+
 @Entity
 @Table(name="Pojazdy")
 public class Pojazdy {
 
     @Id
-    @Column(name="NumerRejestracyjny")
-    private String NumerRejestracyjny;
+    @Column(name="numerRejestracyjny")
+    private String numerRejestracyjny;
 
-    @Column(name="Marka")
-    private String Marka;
+    @Column(name="marka")
+    private String marka;
 
-    @Column(name="Model")
-    private String Model;
+    @Column(name="model")
+    private String model;
 
-    @Column(name="TerminBadania")
+    @Column(name="terminBadania")
     @Type(type="date")
-    private Date TerminBadania;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date terminBadania;
 
-    @Column(name="IdOc")
-    private int IdOc;
+    @Column(name="idOc")
+    private Integer idOc;
 
-    @Column(name="IdKierowcy")
-    private int IdKierowcy;
+    @Column(name="idKierowcy")
+    private Integer idKierowcy;
+
+    @Column(name="CzyAktywny")
+    private String czyAktywny = "TAK";
+
+    @Column(name="DataUsuniecia")
+    @Type(type="date")
+    private Date dataUsuniecia;
 
     public String getNumerRejestracyjny() {
-        return NumerRejestracyjny;
+        return numerRejestracyjny;
     }
     public void setNumerRejestracyjny(String numerRejestracyjny) {
-        NumerRejestracyjny = numerRejestracyjny;
+        this.numerRejestracyjny = numerRejestracyjny;
     }
     public String getMarka() {
-        return Marka;
+        return marka;
     }
     public void setMarka(String marka) {
-        Marka = marka;
+        this.marka = marka;
     }
     public String getModel() {
-        return Model;
+        return model;
     }
     public void setModel(String model) {
-        Model = model;
+        this.model = model;
     }
     public Date getTerminBadania() {
-        return TerminBadania;
+        return terminBadania;
     }
     public void setTerminBadania(Date terminBadania) {
-        this.TerminBadania = terminBadania;
+        this.terminBadania = terminBadania;
     }
-    public int getIdOc() {
-        return IdOc;
+    public Integer getIdOc() {
+        return idOc;
     }
-    public void setIdOc(int idOc) {
-        IdOc = idOc;
+    public void setIdOc(Integer idOc) {
+        this.idOc = idOc;
     }
-    public int getIdKierowcy() {
-        return IdKierowcy;
+    public Integer getIdKierowcy() {
+        return idKierowcy;
     }
-    public void setIdKierowcy(int idKierowcy) {
-        IdKierowcy = idKierowcy;
+    public void setIdKierowcy(Integer idKierowcy) {
+        this.idKierowcy = idKierowcy;
+    }
+
+    public void setDataUsuniecia(Date dataUsuniecia) {
+        this.dataUsuniecia = dataUsuniecia;
     }
 
     @Override
     public String toString() {
         return "Pojazdy{" +
-                "NumerRejestracyjny='" + NumerRejestracyjny + '\'' +
-                ", Marka='" + Marka + '\'' +
-                ", Model='" + Model + '\'' +
-                ", TerminBadania=" + TerminBadania +
-                ", IdOc=" + IdOc +
-                ", IdKierowcy=" + IdKierowcy +
+                "numerRejestracyjny='" + numerRejestracyjny + '\'' +
+                ", marka='" + marka + '\'' +
+                ", model='" + model + '\'' +
+                ", terminBadania=" + terminBadania +
+                ", idOc=" + idOc +
+                ", idKierowcy=" + idKierowcy +
+                ", czyAktywny='" + czyAktywny + '\'' +
+                ", dataUsuniecia=" + dataUsuniecia +
                 '}';
     }
 

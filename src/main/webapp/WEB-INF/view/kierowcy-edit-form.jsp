@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h2></h2>
-    <form:form action="zapiszKierowce" role="form" data-toggle="validator" modelAttribute="kierowca" cssClass="form-horizontal" method="POST">
+    <form:form action="zapiszEdytowanegoKierowce" role="form" data-toggle="validator" modelAttribute="kierowca" cssClass="form-horizontal" method="POST">
         <form:hidden path="IdKierowcy"/>
         <div class="form-group">
             <form:label path="Imie" for="imieInput" cssClass="control-label col-xs-2">Imię:</form:label>
@@ -26,7 +26,7 @@
         <div class="form-group">
             <form:label path="EMail" for="emailInput" class="control-label col-xs-2">E-mail:</form:label>
             <div class="col-xs-10">
-            <form:input path="EMail" id="emailInput"  cssClass="form-control" placeholder="Wpisz e-mail" required="required" type="email"/>
+            <form:input path="EMail" id="emailInput"  cssClass="form-control" placeholder="Wpisz e-mail" required="required" type="email" readonly="true"/>
             </div>
         </div>
         <div class="form-group">

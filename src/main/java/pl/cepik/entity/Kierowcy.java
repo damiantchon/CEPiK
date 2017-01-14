@@ -1,10 +1,11 @@
 package pl.cepik.entity;
 
-import javax.persistence.*;
+import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
 
-/**
- * Created by Damian on 04.01.2017.
- */
+import javax.persistence.*;
+import java.util.Date;
+
 @Entity
 @Table(name="Kierowcy")
 public class Kierowcy {
@@ -26,6 +27,39 @@ public class Kierowcy {
     @Column(name = "CzyPosiadaUprawnienia")
     private String czyPosiadaUprawnienia;
 
+    @Column(name = "CzyAktywny")
+    private String czyAktywny = "TAK";
+
+    @Column(name = "DataUsuniecia")
+    @Type(type="date")
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    private Date dataUsuniecia;
+
+    @Override
+    public String toString() {
+        return "Kierowcy{" +
+                "idKierowcy=" + idKierowcy +
+                ", imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", czyPosiadaUprawnienia='" + czyPosiadaUprawnienia + '\'' +
+                ", czyAktywny='" + czyAktywny + '\'' +
+                ", dataUsuniecia=" + dataUsuniecia +
+                '}';
+    }
+
+    public Date getDataUsuniecia() {
+        return dataUsuniecia;
+    }
+    public void setDataUsuniecia(Date dataUsuniecia) {
+        this.dataUsuniecia = dataUsuniecia;
+    }
+    public String getCzyAktywny() {
+        return czyAktywny;
+    }
+    public void setCzyAktywny(String czyAktywny) {
+        this.czyAktywny = czyAktywny;
+    }
     public int getIdKierowcy() {
         return idKierowcy;
     }
@@ -55,17 +89,6 @@ public class Kierowcy {
     }
     public void setCzyPosiadaUprawnienia(String czyPosiadaUprawnienia) {
         this.czyPosiadaUprawnienia = czyPosiadaUprawnienia;
-    }
-
-    @Override
-    public String toString() {
-        return "Kierowcy{" +
-                "idKierowcy=" + idKierowcy +
-                ", imie='" + imie + '\'' +
-                ", nazwisko='" + nazwisko + '\'' +
-                ", eMail='" + eMail + '\'' +
-                ", czyPosiadaUprawnienia='" + czyPosiadaUprawnienia + '\'' +
-                '}';
     }
 
     public Kierowcy() {

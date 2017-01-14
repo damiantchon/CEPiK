@@ -5,5 +5,15 @@ import pl.cepik.entity.Pojazdy;
 import java.util.List;
 
 public interface PojazdyService {
-    public List<Pojazdy> getPojazdy();
+    List<Pojazdy> getPojazdy();
+
+    void zapiszNowyPojazd(Pojazdy pojazd);
+
+    void usunPojazd(String nrRejestracyjny);
+
+    Pojazdy getPojazdy(String nrRejestracyjny);
+
+    void zapiszEdytowanyPojazd(Pojazdy pojazd);
+
+    List<Pojazdy> getPojazdyFiltrowana(Pojazdy pojazd);
 }

@@ -26,6 +26,12 @@ public class KierowcyServiceImpl implements KierowcyService {
 
     @Override
     @Transactional
+    public List<Kierowcy> getKierowcyFiltrowana(Kierowcy kierowca) {
+        return kierowcyDAO.getKierowcyFiltrowana(kierowca);
+    }
+
+    @Override
+    @Transactional
     public void zapiszKierowce(Kierowcy kierowca) {
         kierowcyDAO.zapiszKierowce(kierowca);
     }
@@ -40,5 +46,11 @@ public class KierowcyServiceImpl implements KierowcyService {
     @Transactional
     public void usunKierowce(int idKierowcy) {
         kierowcyDAO.usunKierowce(idKierowcy);
+    }
+
+    @Override
+    @Transactional
+    public void zapiszEdytowanegoKierowce(Kierowcy kierowca) {
+        kierowcyDAO.zapiszEdytowanegoKierowce(kierowca);
     }
 }

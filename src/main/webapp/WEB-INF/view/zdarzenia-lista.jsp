@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Damian
-  Date: 05.01.2017
-  Time: 11:05
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
@@ -15,7 +8,7 @@
     <body>
     <div class="container">
     <h2> Lista zdarzeń </h2>
-        <table class="table table-striped">
+        <table class="table table-hover table-bordered">
             <tr>
                 <th>IdZdarzenia</th>
                 <th>NumerRejestracyjny</th>

@@ -24,8 +24,16 @@ public class KierowcyController {
     @GetMapping("/lista")
     public String listaKierowcy(Model theModel){
         List<Kierowcy> kierowcy = kierowcyService.getKierowcy();
+        Kierowcy kierowca = new Kierowcy();
         theModel.addAttribute("Kierowcy", kierowcy);
+        theModel.addAttribute("kierowca", kierowca);
+        return "kierowcy-lista";
+    }
 
+    @PostMapping("/listaFiltrowana")
+    public String listaFiltrowanaKierowcy(@ModelAttribute("kierowca") Kierowcy kierowca, Model theModel){
+        List<Kierowcy> kierowcy = kierowcyService.getKierowcyFiltrowana(kierowca);
+        theModel.addAttribute("Kierowcy", kierowcy);
         return "kierowcy-lista";
     }
 
@@ -42,14 +50,19 @@ public class KierowcyController {
         kierowcyService.zapiszKierowce(kierowca);
         return "redirect:/kierowcy/lista";
     }
+
+    @PostMapping("zapiszEdytowanegoKierowce")
+    public String zapiszEdytowanegoKierowce(@ModelAttribute("kierowca") Kierowcy kierowca) {
+
+        kierowcyService.zapiszEdytowanegoKierowce(kierowca);
+        return "redirect:/kierowcy/lista";
+    }
+
     @GetMapping("/edytujKierowce")
     public String edytujKierowce(@RequestParam("IdKierowcy") int idKierowcy, Model theModel){
-        //wyciagnac kierowce z serwisu
         Kierowcy kierowca = kierowcyService.getKierowcy(idKierowcy);
-        //ustawic kierowce jako atrybut, aby wypełnić pola update-forma
         theModel.addAttribute("kierowca", kierowca);
-        //wysłać do forma
-        return "kierowcy-form";
+        return "kierowcy-edit-form";
     }
     @GetMapping("usunKierowce")
     public String usunKierowce(@RequestParam("IdKierowcy") int idKierowcy){

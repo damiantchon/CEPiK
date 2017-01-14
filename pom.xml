@@ -327,6 +327,35 @@
       </exclusions>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap-datepicker -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap-datepicker</artifactId>
+      <version>1.6.4</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.webjars/datatables -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>datatables</artifactId>
+      <version>1.10.12</version>
+    </dependency>
+
+
   </dependencies>
   <build>
     <finalName>CEPiK</finalName>
