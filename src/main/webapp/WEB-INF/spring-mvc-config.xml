@@ -35,11 +35,13 @@
         <property name="jdbcUrl" value="${db.jdbcUrl}" />
         <property name="user" value="${db.user}" />
         <property name="password" value="${db.password}" />
-
-        <!-- these are connection pool properties for C3P0 -->
-        <property name="minPoolSize" value="5" />
-        <property name="maxPoolSize" value="20" />
-        <property name="maxIdleTime" value="30000" />
+        <property name="minPoolSize" value="${db.minPoolSize}" />
+        <property name="maxPoolSize" value="${db.maxPoolSize}" />
+        <property name="maxIdleTime" value="${db.maxIdleTime}" />
+		<property name="acquireIncrement" value="${db.acquireIncrement}"/>
+		<property name="testConnectionOnCheckout" value="${db.testConnectionOnCheckin}"/>
+		<property name="idleConnectionTestPeriod" value="${db.idleConnectionTestPeriod}"/>
+		<property name="maxIdleTimeExcessConnections" value="${db.maxIdleTimeExcessConnections}"/>
 	</bean>  
 	
     <!-- Step 2: Setup Hibernate session factory -->

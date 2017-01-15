@@ -14,7 +14,7 @@
 <body>
 <br>
 <div class="container bg-primary">
-    <h2>Panel Starosty</h2>
+    <h2 class="text-center">Panel Starosty</h2>
 <div class="container-fluid bg-primary">
     <a href="${pageContext.request.contextPath}/pojazdy/lista" class="btn btn-success col-xs-12">Lista pojazdów</a>
     <br>

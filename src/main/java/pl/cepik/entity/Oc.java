@@ -5,9 +5,7 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by Damian on 04.01.2017.
- */
+
 @Entity
 @Table(name="OC")
 public class Oc {
