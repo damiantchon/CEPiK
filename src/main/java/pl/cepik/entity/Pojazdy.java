@@ -39,6 +39,24 @@ public class Pojazdy {
     @Type(type="date")
     private Date dataUsuniecia;
 
+    @Column(name="CzyKradziony")
+    private String czyKradziony = "NIE";
+
+    public String getCzyAktywny() {
+        return czyAktywny;
+    }
+    public void setCzyAktywny(String czyAktywny) {
+        this.czyAktywny = czyAktywny;
+    }
+    public Date getDataUsuniecia() {
+        return dataUsuniecia;
+    }
+    public String getCzyKradziony() {
+        return czyKradziony;
+    }
+    public void setCzyKradziony(String czyKradziony) {
+        this.czyKradziony = czyKradziony;
+    }
     public String getNumerRejestracyjny() {
         return numerRejestracyjny;
     }

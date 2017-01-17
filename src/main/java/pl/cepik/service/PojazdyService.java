@@ -1,6 +1,9 @@
 package pl.cepik.service;
 
+import pl.cepik.entity.Kierowcy;
+import pl.cepik.entity.Oc;
 import pl.cepik.entity.Pojazdy;
+import pl.cepik.entity.Zdarzenia;
 
 import java.util.List;
 
@@ -16,4 +19,10 @@ public interface PojazdyService {
     void zapiszEdytowanyPojazd(Pojazdy pojazd);
 
     List<Pojazdy> getPojazdyFiltrowana(Pojazdy pojazd);
+
+    Kierowcy getKierowca(Integer idKierowcy);
+
+    List<Zdarzenia> getZdarzenia(String nrSzukanegoPojazdu);
+
+    Oc getOc(Integer idOc);
 }

@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface OcService {
     public List<Oc> getOc();
+
+    List<Oc> getOc(int idOc);
 }

@@ -23,4 +23,10 @@ public class OcServiceImpl implements OcService {
     public List<Oc> getOc() {
         return ocDAO.getOC();
     }
+
+    @Override
+    @Transactional
+    public List<Oc> getOc(int idOc) {
+        return ocDAO.getOC(idOc);
+    }
 }

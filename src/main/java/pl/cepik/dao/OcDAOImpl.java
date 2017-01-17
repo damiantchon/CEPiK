@@ -5,12 +5,13 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.cepik.entity.Oc;
+import pl.cepik.entity.Pojazdy;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by Damian on 04.01.2017.
- */
+
 @Repository
 public class OcDAOImpl implements OcDAO {
 
@@ -22,7 +23,38 @@ public class OcDAOImpl implements OcDAO {
 
         Session currentSession = sessionFactory.getCurrentSession();
         Query<Oc> theQuery = currentSession.createQuery("from Oc", Oc.class);
+        return theQuery.getResultList();
+    }
+
+    @Override //nie używane
+    public List<Oc> getOC(List<Pojazdy> pojazdy) {
+        List<Integer> lista = new LinkedList<Integer>();
+        for(Pojazdy pojazd: pojazdy){
+            if(pojazd.getIdOc()!=null) {
+                lista.add(pojazd.getIdOc());
+            }
+        }
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Oc> theQuery = currentSession.createQuery("from Oc where idOc in (:parLista)",Oc.class);
+        theQuery.setParameter("parLista",lista);
+        return theQuery.getResultList();
+    }
+
+    @Override
+    public List<Oc> getOC(int id) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Oc> theQuery = currentSession.createQuery("from Oc where idOc=:id",Oc.class);
+        theQuery.setParameter("id",id);
+        return theQuery.getResultList();
+    }
+
+    @Override
+    public Oc getOcEntity(Integer idOc) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Oc> theQuery = currentSession.createQuery("from Oc where idOc=:id",Oc.class);
+        theQuery.setParameter("id",idOc);
         List<Oc> oc = theQuery.getResultList();
-        return oc;
+        if(!oc.isEmpty()) return oc.get(0);
+        else return null;
     }
 }

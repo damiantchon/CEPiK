@@ -32,6 +32,7 @@
             <th>Marka</th>
             <th>Model</th>
             <th>Termin badania</th>
+            <th>Kradziony</th>
             <th>Id Oc</th>
             <th>Id Kierowcy</th>
             <th>Akcja</th>
@@ -52,6 +53,7 @@
                 <td class="text-nowrap">${tempPojazd.marka}</td>
                 <td class="text-nowrap">${tempPojazd.model}</td>
                 <td class="text-nowrap">${tempPojazd.terminBadania}</td>
+                <td class="text-nowrap">${tempPojazd.czyKradziony}</td>
                 <td class="text-nowrap">${tempPojazd.idOc}</td>
                 <td class="text-nowrap">${tempPojazd.idKierowcy}</td>
                 <td class="text-nowrap">

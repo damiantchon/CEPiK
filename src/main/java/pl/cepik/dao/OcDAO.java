@@ -1,6 +1,7 @@
 package pl.cepik.dao;
 
 import pl.cepik.entity.Oc;
+import pl.cepik.entity.Pojazdy;
 
 import java.util.List;
 
@@ -9,4 +10,10 @@ import java.util.List;
  */
 public interface OcDAO {
     public List<Oc> getOC();
+
+    List<Oc> getOC(List<Pojazdy> pojazdy);
+
+    List<Oc> getOC(int idOc);
+
+    Oc getOcEntity(Integer idOc);
 }

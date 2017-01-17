@@ -34,6 +34,17 @@
                 <form:input path="TerminBadania" id="terminInput" cssClass="form-control" type="date" required="required"/>
             </div>
         </div>
+
+        <div class="form-group">
+            <form:label path="CzyKradziony" for="kradzionyInput" class="control-label col-xs-2">Kradziony:</form:label>
+            <div class="col-xs-2">
+                <form:select path="CzyKradziony" id="KradzionyInput" cssClass="form-control">
+                    <form:option value="TAK">TAK</form:option>
+                    <form:option value="NIE">NIE</form:option>
+                </form:select>
+            </div>
+        </div>
+
         <div class="form-group">
             <form:label path="IdOc" for="idocInput" cssClass="text-nowrap control-label col-xs-2">ID OC:</form:label>
             <div class="col-xs-10">

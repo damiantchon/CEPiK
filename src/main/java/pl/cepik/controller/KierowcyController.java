@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.cepik.entity.Kierowcy;
+import pl.cepik.entity.Oc;
+import pl.cepik.entity.Pojazdy;
+import pl.cepik.entity.Zdarzenia;
 import pl.cepik.service.KierowcyService;
 
 import java.util.List;
@@ -27,21 +30,45 @@ public class KierowcyController {
         Kierowcy kierowca = new Kierowcy();
         theModel.addAttribute("Kierowcy", kierowcy);
         theModel.addAttribute("kierowca", kierowca);
-        return "kierowcy-lista";
+        return "starosta/kierowcy-lista";
+    }
+
+    @GetMapping("/sprawdzKierowce")
+    public String sprawdzKierowce(@ModelAttribute("kierowca") Kierowcy kiero, Model theModel){
+        int idSzukanegoKierowcy = kiero.getIdKierowcy();
+        Kierowcy kierowca = kierowcyService.getKierowcy(idSzukanegoKierowcy);
+
+        if(kierowca!=null){
+            List<Pojazdy> pojazdy = kierowcyService.getPojazdy(idSzukanegoKierowcy);
+            List<Zdarzenia> zdarzenia = kierowcyService.getZdarzenia(idSzukanegoKierowcy);
+            theModel.addAttribute("kierowca", kierowca);
+            theModel.addAttribute("pojazdy", pojazdy);
+            theModel.addAttribute("zdarzenia", zdarzenia);
+            return "policja/kierowcy-wynik-policja";
+        }else {
+            return "policja/kierowcy-form-policja";
+        }
+    }
+
+    @GetMapping("/sprawdzanieKierowcyForm")
+    public String sprawdzanieKierowcyForm(Model theModel){
+        Kierowcy kierowca = new Kierowcy();
+        theModel.addAttribute("kierowca",kierowca);
+        return "policja/kierowcy-form-policja";
     }
 
     @PostMapping("/listaFiltrowana")
     public String listaFiltrowanaKierowcy(@ModelAttribute("kierowca") Kierowcy kierowca, Model theModel){
         List<Kierowcy> kierowcy = kierowcyService.getKierowcyFiltrowana(kierowca);
         theModel.addAttribute("Kierowcy", kierowcy);
-        return "kierowcy-lista";
+        return "starosta/kierowcy-lista";
     }
 
     @GetMapping("/dodajKierowce")
     public String dodajKierowce(Model theModel){
         Kierowcy kierowca = new Kierowcy();
         theModel.addAttribute("kierowca", kierowca);
-        return "kierowcy-form";
+        return "starosta/kierowcy-form";
     }
 
     @PostMapping("/zapiszKierowce")
@@ -62,8 +89,9 @@ public class KierowcyController {
     public String edytujKierowce(@RequestParam("IdKierowcy") int idKierowcy, Model theModel){
         Kierowcy kierowca = kierowcyService.getKierowcy(idKierowcy);
         theModel.addAttribute("kierowca", kierowca);
-        return "kierowcy-edit-form";
+        return "starosta/kierowcy-edit-form";
     }
+
     @GetMapping("usunKierowce")
     public String usunKierowce(@RequestParam("IdKierowcy") int idKierowcy){
         kierowcyService.usunKierowce(idKierowcy);

@@ -31,8 +31,16 @@ public class PojazdyDAOImpl implements PojazdyDAO {
     @Override
     public List<Pojazdy> getPojazdyFiltrowana(Pojazdy pojazd) {
         Session currentSession = sessionFactory.getCurrentSession();
-        Query<Pojazdy> theQuery = currentSession.createQuery("from Pojazdy where czyAktywny='TAK' and numerRejestracyjny like :numer order by numerRejestracyjny");
+        Query<Pojazdy> theQuery = currentSession.createQuery("from Pojazdy where czyAktywny='TAK' and numerRejestracyjny like :numer order by numerRejestracyjny", Pojazdy.class);
         theQuery.setParameter("numer","%"+pojazd.getNumerRejestracyjny()+"%");
+        return theQuery.getResultList();
+    }
+
+    @Override
+    public List<Pojazdy> getPojazdyFiltrowana(int idSzukanegoKierowcy) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Pojazdy> theQuery = currentSession.createQuery("from Pojazdy where czyAktywny='TAK' and idKierowcy=:id order by numerRejestracyjny", Pojazdy.class);
+        theQuery.setParameter("id",idSzukanegoKierowcy);
         return theQuery.getResultList();
     }
 

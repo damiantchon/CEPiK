@@ -1,6 +1,7 @@
 package pl.cepik.entity;
 
 import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,22 +16,26 @@ public class Zdarzenia {
     @Column(name = "IdZdarzenia")
     private int idZdarzenia;
 
-    @Column(name = "TypZdarzenia")
+    @Column(name = "TypZdarzenia")//
     private String typZdarzenia;
 
     @Column(name = "OpisZdarzenia")
     private String opisZdarzenia;
 
-    @Column(name = "DataZdarzenia")
+    @Column(name = "DataZdarzenia")//
     @Type(type = "date")
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date dataZdarzenia;
 
     @Column(name = "NumerRejestracyjny")
     private String numerRejestracyjny;
 
     @Column(name = "IdKierowcy")
-    private int idKierowcy;
+    private Integer idKierowcy;
 
+    public void setIdKierowcy(Integer idKierowcy) {
+        this.idKierowcy = idKierowcy;
+    }
     public int getIdZdarzenia() {
         return idZdarzenia;
     }
@@ -61,7 +66,7 @@ public class Zdarzenia {
     public void setNumerRejestracyjny(String numerRejestracyjny) {
         this.numerRejestracyjny = numerRejestracyjny;
     }
-    public int getIdKierowcy() {
+    public Integer getIdKierowcy() {
         return idKierowcy;
     }
     public void setIdKierowcy(int idKierowcy) {

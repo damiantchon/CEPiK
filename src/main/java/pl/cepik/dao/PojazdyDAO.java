@@ -16,4 +16,6 @@ public interface PojazdyDAO {
     void zapiszEdytowanyPojazd(Pojazdy pojazd);
 
     List<Pojazdy> getPojazdyFiltrowana(Pojazdy pojazd);
+
+    List<Pojazdy> getPojazdyFiltrowana(int idSzukanegoKierowcy);
 }

@@ -9,4 +9,10 @@ import java.util.List;
  */
 public interface ZdarzeniaDAO {
     public List<Zdarzenia> getZdarzenia();
+
+    List<Zdarzenia> getZdarzeniaFiltrowana(int idSzukanegoKierowcy);
+
+    List<Zdarzenia> getZdarzenia(String nrSzukanegoPojazdu);
+
+    void dodajZdarzenie(Zdarzenia zdarzenie);
 }

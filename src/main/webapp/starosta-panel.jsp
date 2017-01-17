@@ -16,8 +16,8 @@
 <div class="container bg-primary">
     <h2 class="text-center">Panel Starosty</h2>
 <div class="container-fluid bg-primary">
+    <div class="col-xs-12"><br></div>
     <a href="${pageContext.request.contextPath}/pojazdy/lista" class="btn btn-success col-xs-12">Lista pojazdów</a>
-    <br>
     <a href="${pageContext.request.contextPath}/kierowcy/lista" class="btn btn-success col-xs-12">Lista kierowców</a>
 </div>
 </div>
