@@ -18,4 +18,6 @@ public interface PojazdyDAO {
     List<Pojazdy> getPojazdyFiltrowana(Pojazdy pojazd);
 
     List<Pojazdy> getPojazdyFiltrowana(int idSzukanegoKierowcy);
+
+    List<Pojazdy> getPojazdyUbezpieczyciel(String ubezpieczyciel);
 }

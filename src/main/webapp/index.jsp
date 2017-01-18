@@ -15,7 +15,7 @@
 <div class="container">
     <a href="starosta-panel.jsp" class="btn btn-primary">Panel Starosty</a>
     <a href="policja-panel.jsp" class="btn btn-primary">Panel Policji</a>
-    <a href="oc-panel.jsp" class="btn btn-primary">Panel OC</a>
+    <a href="/oc/wybierzUbezpieczyciela" class="btn btn-primary">Panel OC</a>
     <a href="serwis-panel.jsp" class="btn btn-primary">Panel Serwisu</a>
 </div>
     <script src="${pageContext.request.contextPath}/webjars/jquery/2.1.1/jquery.min.js"></script>

@@ -16,4 +16,8 @@ public interface OcDAO {
     List<Oc> getOC(int idOc);
 
     Oc getOcEntity(Integer idOc);
+
+    List<Oc> getOC(String ubezpieczyciel);
+
+    void zapiszOC(Oc oc);
 }

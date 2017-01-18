@@ -1,0 +1,35 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+    <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<br>
+
+<div class="container" style="background: white">
+    <form:form action="wejdzUbezpieczyciel" role="form" data-toggle="validator" modelAttribute="oc" cssClass="form-horizontal" method="POST">
+    <div class="form-group">
+        <form:label path="Ubezpieczyciel" for="ubezpieczycielInput" class="control-label col-xs-1">Ubezpieczyciel:</form:label>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-5">
+            <form:select path="Ubezpieczyciel" id="ubezpieczycielInput" cssClass="selectpicker form-control">
+                <form:option value="AVIVA Direct">AVIVA Direct</form:option>
+                <form:option value="PZU">PZU</form:option>
+                <form:option value="ALLIANZ Direct">ALLIANZ Direct</form:option>
+                <form:option value="LINK4">LINK4</form:option>
+                <form:option value="MetLife">MetLife</form:option>
+                <form:option value="HESTIA">HESTIA</form:option>
+            </form:select>
+        </div>
+    </div>
+        <input class="btn btn-danger col-xs-2" value="Wróc" onClick="history.go(-1);return true;">
+        <input type="submit" value="Wejdź" class="btn btn-success col-xs-2"/>
+    </form:form>
+
+</div>
+<script src="${pageContext.request.contextPath}/webjars/jquery/2.1.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>

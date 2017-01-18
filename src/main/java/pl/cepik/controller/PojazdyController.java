@@ -9,7 +9,6 @@ import pl.cepik.entity.Oc;
 import pl.cepik.entity.Pojazdy;
 import pl.cepik.entity.Zdarzenia;
 import pl.cepik.service.PojazdyService;
-
 import java.util.List;
 
 
@@ -32,7 +31,7 @@ public class PojazdyController {
         theModel.addAttribute("Pojazdy", pojazdy);
         theModel.addAttribute("pojazd", pojazd);
 
-        return "starosta/pojazdy-lista";
+        return "starosta/pojazdy-lista-starosta";
     }
 
     @PostMapping("/listaFiltrowana")
@@ -40,14 +39,14 @@ public class PojazdyController {
 
         List<Pojazdy> pojazdy = pojazdyService.getPojazdyFiltrowana(pojazd);
         theModel.addAttribute("Pojazdy", pojazdy);
-        return "starosta/pojazdy-lista";
+        return "starosta/pojazdy-lista-starosta";
     }
 
     @GetMapping("/dodajPojazd")
     public String dodajPojazd(Model theModel){
         Pojazdy pojazd = new Pojazdy();
         theModel.addAttribute("pojazd",pojazd);
-        return "starosta/pojazdy-form";
+        return "starosta/pojazdy-form-starosta";
     }
 
     @PostMapping("/zapiszPojazd")
@@ -92,7 +91,7 @@ public class PojazdyController {
     public String edytujPojazd(@RequestParam("numerRejestracyjny") String nrRejestracyjny, Model theModel){
         Pojazdy pojazd = pojazdyService.getPojazdy(nrRejestracyjny);
         theModel.addAttribute("pojazd", pojazd);
-        return "starosta/pojazdy-edit-form";
+        return "starosta/pojazdy-edit-form-starosta";
     }
 
     @GetMapping("/usunPojazd")

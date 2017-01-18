@@ -6,8 +6,10 @@ import org.hibernate.query.Query;
 import org.hibernate.query.QueryProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import pl.cepik.entity.Oc;
 import pl.cepik.entity.Pojazdy;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Repository
@@ -44,6 +46,20 @@ public class PojazdyDAOImpl implements PojazdyDAO {
         return theQuery.getResultList();
     }
 
+    @Override
+    public List<Pojazdy> getPojazdyUbezpieczyciel(String ubezpieczyciel) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Oc> theQuery = currentSession.createQuery("from Oc where ubezpieczyciel=:param",Oc.class);
+        theQuery.setParameter("param",ubezpieczyciel);
+        List<Oc> ocList = theQuery.getResultList();
+        LinkedList<Integer> ocIdList = new LinkedList<Integer>();
+        for(Oc oc :ocList){
+            ocIdList.add(oc.getIdOc());
+        }
+        Query<Pojazdy> theQuery2 = currentSession.createQuery("from Pojazdy where idOc in (:ids)",Pojazdy.class);
+        theQuery2.setParameter("ids",ocIdList);
+        return theQuery2.getResultList();
+    }
 
     @Override
     public void zapiszNowyPojazd(Pojazdy pojazd) {

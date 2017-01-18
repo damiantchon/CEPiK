@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head><!--TODO-->
+<head>
     <title>Title</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,9 +17,14 @@
 <div class="container" style="background: white">
     <h3>Kradziony: ${pojazd.czyKradziony}</h3>
     <h3>Termin badania: ${pojazd.terminBadania}</h3>
-    <h3 id="oce">Data ważności oc: ${oc.zakonczenie}</h3>
-
-
+    <c:choose>
+    <c:when  test="${oc.zakonczenie!=null}">
+        <h3>Data ważności oc: ${oc.zakonczenie}</h3>
+    </c:when>
+    <c:otherwise>
+        <h3 style="color: red">Brak OC!</h3>
+    </c:otherwise>
+    </c:choose>
 </div>
 
 <div class="container" style="background: white">

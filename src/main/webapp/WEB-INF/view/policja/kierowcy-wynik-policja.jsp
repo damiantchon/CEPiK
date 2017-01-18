@@ -11,7 +11,15 @@
     <h2>${kierowca.imie} ${kierowca.nazwisko} (${kierowca.eMail})</h2>
 </div>
 <div class="container" style="background: white">
-    <h3>Uprawnienia: ${kierowca.czyPosiadaUprawnienia}</h3>
+    <c:choose>
+        <c:when  test="${kierowca.czyPosiadaUprawnienia=='TAK'}">
+            <h3>Uprawnienia: ${kierowca.czyPosiadaUprawnienia}</h3>
+        </c:when>
+        <c:otherwise>
+            <h3 style="color: red">Uprawnienia: ${kierowca.czyPosiadaUprawnienia}</h3>
+        </c:otherwise>
+    </c:choose>
+
     <h3>Pojazdy:</h3>
     <table class="table table-bordered">
         <tr>

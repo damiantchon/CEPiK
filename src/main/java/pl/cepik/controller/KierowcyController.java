@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.cepik.entity.Kierowcy;
-import pl.cepik.entity.Oc;
 import pl.cepik.entity.Pojazdy;
 import pl.cepik.entity.Zdarzenia;
 import pl.cepik.service.KierowcyService;
@@ -30,7 +29,7 @@ public class KierowcyController {
         Kierowcy kierowca = new Kierowcy();
         theModel.addAttribute("Kierowcy", kierowcy);
         theModel.addAttribute("kierowca", kierowca);
-        return "starosta/kierowcy-lista";
+        return "starosta/kierowcy-lista-starosta";
     }
 
     @GetMapping("/sprawdzKierowce")
@@ -61,14 +60,14 @@ public class KierowcyController {
     public String listaFiltrowanaKierowcy(@ModelAttribute("kierowca") Kierowcy kierowca, Model theModel){
         List<Kierowcy> kierowcy = kierowcyService.getKierowcyFiltrowana(kierowca);
         theModel.addAttribute("Kierowcy", kierowcy);
-        return "starosta/kierowcy-lista";
+        return "starosta/kierowcy-lista-starosta";
     }
 
     @GetMapping("/dodajKierowce")
     public String dodajKierowce(Model theModel){
         Kierowcy kierowca = new Kierowcy();
         theModel.addAttribute("kierowca", kierowca);
-        return "starosta/kierowcy-form";
+        return "starosta/kierowcy-form-starosta";
     }
 
     @PostMapping("/zapiszKierowce")
@@ -89,7 +88,7 @@ public class KierowcyController {
     public String edytujKierowce(@RequestParam("IdKierowcy") int idKierowcy, Model theModel){
         Kierowcy kierowca = kierowcyService.getKierowcy(idKierowcy);
         theModel.addAttribute("kierowca", kierowca);
-        return "starosta/kierowcy-edit-form";
+        return "starosta/kierowcy-edit-form-starosta";
     }
 
     @GetMapping("usunKierowce")
