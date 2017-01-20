@@ -56,9 +56,13 @@ public class PojazdyDAOImpl implements PojazdyDAO {
         for(Oc oc :ocList){
             ocIdList.add(oc.getIdOc());
         }
-        Query<Pojazdy> theQuery2 = currentSession.createQuery("from Pojazdy where idOc in (:ids)",Pojazdy.class);
-        theQuery2.setParameter("ids",ocIdList);
-        return theQuery2.getResultList();
+        if(!ocIdList.isEmpty()) {
+            Query<Pojazdy> theQuery2 = currentSession.createQuery("from Pojazdy where idOc in (:ids)", Pojazdy.class);
+            theQuery2.setParameter("ids", ocIdList);
+            return theQuery2.getResultList();
+        }else{
+            return null;
+        }
     }
 
     @Override
@@ -97,7 +101,10 @@ public class PojazdyDAOImpl implements PojazdyDAO {
         if(pojazd.getIdKierowcy()==0)pojazd.setIdKierowcy(null);
         if(pojazd.getIdOc()==0)pojazd.setIdOc(null);
         Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.saveOrUpdate(pojazd);
+        Query theQuery = currentSession.createQuery("from Kierowcy where idKierowcy=:param");
+        theQuery.setParameter("param",pojazd.getIdKierowcy());
+        if(!theQuery.getResultList().isEmpty()) currentSession.saveOrUpdate(pojazd);
+        else if(pojazd.getIdKierowcy()==null) currentSession.saveOrUpdate(pojazd);
     }
 
 }

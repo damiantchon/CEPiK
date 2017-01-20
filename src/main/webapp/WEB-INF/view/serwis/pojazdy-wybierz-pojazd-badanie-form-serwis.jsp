@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Panel Policji</title>
+    <title>Panel Serwisu</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -21,15 +21,16 @@
             <h4 style="color: red">Brak pojazdu o numerze rejestracyjnym '${pojazd.numerRejestracyjny}' w bazie danych! </h4>
         </c:otherwise>
     </c:choose>
-    <form:form action="sprawdzPojazd" role="form" data-toggle="validator" modelAttribute="pojazd" cssClass="form-horizontal" method="GET">
+    <form:form action="sprawdzPojazdSerwis" role="form" data-toggle="validator" modelAttribute="pojazd" cssClass="form-horizontal" method="GET">
         <div class="form-group">
             <form:label path="NumerRejestracyjny" for="numerInput" cssClass="control-label col-xs-2 text-nowrap">Numer rejestracyjny:</form:label>
             <div class="col-xs-2">
                 <form:input path="NumerRejestracyjny" id="numerInput"  cssClass="form-control" placeholder="np. WB9876M" required="required" type="text"/>
             </div>
             <input type="submit" value="Wyszukaj" class="btn btn-success"/>
-            <a href="${pageContext.request.contextPath}/policja-panel.jsp" class="btn btn-danger">Wróć</a>
+            <a href="${pageContext.request.contextPath}/serwis-panel.jsp" class="btn btn-danger">Wróć</a>
         </div>
+
     </form:form>
 </div>
 <script src="${pageContext.request.contextPath}/webjars/jquery/2.1.1/jquery.min.js"></script>

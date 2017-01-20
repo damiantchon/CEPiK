@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Panel Starosty</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -19,6 +19,8 @@
     <div class="col-xs-12"><br></div>
     <a href="${pageContext.request.contextPath}/pojazdy/lista" class="btn btn-success col-xs-12">Lista pojazdów</a>
     <a href="${pageContext.request.contextPath}/kierowcy/lista" class="btn btn-success col-xs-12">Lista kierowców</a>
+    <div class="col-xs-12"><br></div>
+    <a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-danger col-xs-12">Wróć</a>
 </div>
 </div>
 <div class="container bg-primary"><br></div>

@@ -3,12 +3,15 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-    <title>Baza oc</title>
+    <title>Panel ${ubezpieczyciel}</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<br>
+<div class="container bg-primary">
+    <h2>Pojazdy ubezpieczone w ${ubezpieczyciel}</h2>
+</div>
 <div class="container" style="background: white">
-    <input class="btn btn-danger" value="Wróc" onClick="history.go(-1);return true;">
     <table class="table table-bordered table-hover">
         <tr>
             <th>Numer rejestracyjny</th>
@@ -39,6 +42,7 @@
             </tr>
         </c:forEach>
     </table>
+    <a href="${pageContext.request.contextPath}/oc/wejdzUbezpieczyciel" class="btn btn-danger col-xs-1">Wróć</a>
 </div>
 <script src="${pageContext.request.contextPath}/webjars/jquery/2.1.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>

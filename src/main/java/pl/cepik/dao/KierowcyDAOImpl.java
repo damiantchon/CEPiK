@@ -46,7 +46,15 @@ public class KierowcyDAOImpl implements KierowcyDAO {
     public Kierowcy getKierowcy(int idKierowcy) {
 
         Session currentSession = sessionFactory.getCurrentSession();
-        return currentSession.get(Kierowcy.class, idKierowcy);
+        Kierowcy kierowca = currentSession.get(Kierowcy.class, idKierowcy);
+        if(kierowca!=null) {
+            if (kierowca.getCzyAktywny().equals("NIE")) {
+                return null;
+            } else {
+                return kierowca;
+            }
+        }
+        return null;
     }
 
     @Override

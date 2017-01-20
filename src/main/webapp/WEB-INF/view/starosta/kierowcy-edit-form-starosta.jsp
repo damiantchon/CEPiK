@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dodaj kierowce</title>
+    <title>Panel Starosty</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -31,11 +31,9 @@
         </div>
         <div class="form-group">
             <form:label path="CzyPosiadaUprawnienia" for="uprawnieniaInput" class="control-label col-xs-2">Uprawnienia:</form:label>
-            <div class="col-xs-2">
-                <form:select path="CzyPosiadaUprawnienia" id="uprawnieniaInput" cssClass="form-control">
-                    <form:option value="TAK">TAK</form:option>
-                    <form:option value="NIE">NIE</form:option>
-                </form:select>
+            <div class="col-xs-10">
+                <form:input path="CzyPosiadaUprawnienia" id="uprawnieniaInput" cssClass="form-control" readonly="true"/>
+            </div>
             </div>
         </div>
         <div class="col-xs-2"></div>

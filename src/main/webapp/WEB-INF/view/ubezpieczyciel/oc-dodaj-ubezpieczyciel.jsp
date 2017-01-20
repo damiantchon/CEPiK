@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dodaj ubezpieczenie</title>
+    <title>Panel ${ubezpieczyciel}</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<br>
 <div class="container bg-primary">
     <h2>Wybierz pojazd (panel ${ubezpieczyciel})</h2>
 </div>
@@ -18,7 +19,7 @@
                 <form:input  path="NumerRejestracyjny" id="numerInput" cssClass="form-control" placeholder="np. WB9876M" required="required"/>
             </div>
         </div>
-        <a href="${pageContext.request.contextPath}/oc/wejdzUbezpieczyciel" class="btn btn-success col-xs-1">Wróć</a>
+        <a href="${pageContext.request.contextPath}/oc/wejdzUbezpieczyciel" class="btn btn-danger col-xs-1">Wróć</a>
         <input class="btn btn-success col-xs-2" value="Wybierz" type="submit"/>
     </form:form>
 </div>

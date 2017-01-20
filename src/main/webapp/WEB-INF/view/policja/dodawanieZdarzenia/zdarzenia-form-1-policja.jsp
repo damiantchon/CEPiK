@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dodaj zdarzenie</title>
+    <title>Panel Policji</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -40,6 +40,7 @@
                     <form:option value="Odebranie uprawnień">Odebranie uprawnień</form:option>
                     <form:option value="Nadanie uprawnień">Nadanie uprawnień</form:option>
                     <form:option value="Zgłoszenie kradzieży">Zgłoszenie kradzieży</form:option>
+                    <form:option value="Odzyskanie pojazdu">Odnalezienie pojazdu</form:option>
                     <form:option value="Inne">Inne</form:option>
                 </form:select>
             </div>

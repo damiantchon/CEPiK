@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Baza pojazdów</title>
+    <title>Panel Starosty</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,11 +17,11 @@
         <div class="form-group">
             <a href="${pageContext.request.contextPath}/starosta-panel.jsp" class="btn btn-danger col-xs-1">Wróć</a>
             <button type="button" class="col-xs-2 btn btn-success" onclick="window.location.href='dodajPojazd'; return false;">Dodaj pojazd</button>
-            <div class="col-xs-5"></div>
+            <div class="col-xs-4"></div>
             <div class="col-xs-3">
                 <form:input path="NumerRejestracyjny" cssClass="form-control" placeholder="Wpisz numer rejestracyjny"/>
             </div>
-            <input  type="submit" value="Wyszukaj" class="btn btn-success col-xs-1"/>
+            <input  type="submit" value="Wyszukaj" class="btn btn-success col-xs-2"/>
         </div>
 
     </form:form>

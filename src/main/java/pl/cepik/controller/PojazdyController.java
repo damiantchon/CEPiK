@@ -59,6 +59,7 @@ public class PojazdyController {
     @GetMapping("/sprawdzaniePojazduForm")
     public String sprawdzanieKierowcyForm(Model theModel){
         Pojazdy pojazd = new Pojazdy();
+        pojazd.setNumerRejestracyjny("");
         theModel.addAttribute("pojazd",pojazd);
         return "policja/pojazdy-form-policja";
     }
@@ -100,4 +101,29 @@ public class PojazdyController {
         return "redirect:/pojazdy/lista";
     }
 
+    @GetMapping("/zmienBadanie")
+    public String zmienBadanie(Model theModel){
+        Pojazdy pojazd = new Pojazdy();
+        pojazd.setNumerRejestracyjny("");
+        theModel.addAttribute("pojazd",pojazd);
+        return "serwis/pojazdy-wybierz-pojazd-badanie-form-serwis";
+    }
+
+    @GetMapping("/sprawdzPojazdSerwis")
+    public String sprawdzPojazdSerwis(@ModelAttribute("pojazd") Pojazdy poja, Model theModel){
+        String nrSzukanegoPojazdu = poja.getNumerRejestracyjny();
+        Pojazdy pojazd = pojazdyService.getPojazdy(nrSzukanegoPojazdu);
+
+        if(pojazd!=null){
+            theModel.addAttribute("pojazd", pojazd);
+            return "serwis/pojazdy-badanie-form-serwis";
+        }
+        return "serwis/pojazdy-wybierz-pojazd-badanie-form-serwis";
+    }
+
+    @PostMapping("/zapiszEdytowanyPojazdSerwis")
+    public String zapiszEdytowanyPojazdSerwis(@ModelAttribute("pojazd") Pojazdy pojazd){
+        pojazdyService.zapiszEdytowanyPojazd(pojazd);
+        return "redirect:/serwis-panel.jsp";
+    }
 }

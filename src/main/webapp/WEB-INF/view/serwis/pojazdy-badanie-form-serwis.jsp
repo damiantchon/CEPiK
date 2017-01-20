@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Panel Starosty</title>
+    <title>Panel Serwisu</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
     <h2></h2>
-    <form:form action="zapiszEdytowanyPojazd" type="form" data-toggle="validator"  modelAttribute="pojazd" cssClass="form-horizontal" method="POST">
+    <form:form action="zapiszEdytowanyPojazdSerwis" type="form" data-toggle="validator"  modelAttribute="pojazd" cssClass="form-horizontal" method="POST">
         <div class="form-group">
             <form:label path="NumerRejestracyjny" for="numerInput" cssClass="text-nowrap control-label col-xs-2">Numer rejestracyjny:</form:label>
             <div class="col-xs-10">
@@ -19,13 +19,13 @@
         <div class="form-group">
             <form:label path="Marka" for="markaInput" cssClass="control-label col-xs-2">Marka:</form:label>
             <div class="col-xs-10">
-                <form:input path="Marka" id="markaInput" cssClass="form-control" placeholder="Wpisz markę" required="required"/>
+                <form:input path="Marka" id="markaInput" cssClass="form-control" placeholder="Wpisz markę" required="required" readonly="true"/>
             </div>
         </div>
         <div class="form-group">
             <form:label path="Model" for="modelInput" cssClass="control-label col-xs-2">Model:</form:label>
             <div class="col-xs-10">
-                <form:input path="Model" id="modelInput" cssClass="form-control" placeholder="Wpisz model" required="required"/>
+                <form:input path="Model" id="modelInput" cssClass="form-control" placeholder="Wpisz model" required="required" readonly="true"/>
             </div>
         </div>
         <div class="form-group">
@@ -34,25 +34,12 @@
                 <form:input path="TerminBadania" id="terminInput" cssClass="form-control" type="date" required="required" min=""/>
             </div>
         </div>
-        <div class="form-group">
-            <form:label path="IdOc" for="idocInput" cssClass="text-nowrap control-label col-xs-2">ID OC:</form:label>
-            <div class="col-xs-10">
-                <form:input path="IdOc" id="idocInput" cssClass="form-control" type="number"
-                            required="required" oninvalid="setCustomValidity('Wypełnij to pole! (0 - brak oc)')"
-                            oninput="setCustomValidity('')"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <form:label path="IdKierowcy" for="idkierowcyInput" cssClass="text-nowrap control-label col-xs-2">ID kierowcy:</form:label>
-            <div class="col-xs-10">
-                <form:input path="IdKierowcy" id="idkierowcyInput" cssClass="form-control" type="number"
-                            required="required" oninvalid="setCustomValidity('Wypełnij to pole!')"
-                            oninput="setCustomValidity('')"/>
-            </div>
+        <form:hidden path="IdOc"/>
+        <form:hidden path="IdKierowcy"/>
         </div>
         <div class="col-xs-2"></div>
         <div class="col-xs-10">
-            <a href="${pageContext.request.contextPath}/pojazdy/lista" class="btn btn-danger">Wróć</a>
+            <a href="${pageContext.request.contextPath}/serwis-panel.jsp" class="btn btn-danger">Wróć</a>
             <input type="submit" value="Zapisz" class="btn btn-success"/>
         </div>
     </form:form>

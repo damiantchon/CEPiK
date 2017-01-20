@@ -55,9 +55,10 @@ public class OcController {
         return "ubezpieczyciel/oc-panel-ubezpieczyciel";
     }
     @PostMapping("/przegladajOc")
-    public String przegladajOc(@ModelAttribute("oc")Oc oc, Model theModel){
+    public String przegladajOc(Model theModel){
         List<Pojazdy> ocModel = ocService.getPojazdy(Main.getUbezpieczycielSaved());
         Pojazdy pojazd = new Pojazdy();
+        theModel.addAttribute("ubezpieczyciel",Main.getUbezpieczycielSaved());
         theModel.addAttribute("pojazd", pojazd);
         theModel.addAttribute("pojazdy", ocModel);
         return "ubezpieczyciel/oc-lista-ubezpieczyciel";
@@ -88,7 +89,12 @@ public class OcController {
     public String zapiszOc(@ModelAttribute("oc")Oc oc,Model theModel){
         oc.setUbezpieczyciel(Main.getUbezpieczycielSaved());
         ocService.zapiszOC(oc);
-        return null;
+
+        List<Pojazdy> ocModel = ocService.getPojazdy(Main.getUbezpieczycielSaved());
+        Pojazdy pojazd = new Pojazdy();
+        theModel.addAttribute("pojazd", pojazd);
+        theModel.addAttribute("pojazdy", ocModel);
+        return "ubezpieczyciel/oc-lista-ubezpieczyciel";
     }
     @PostMapping("/znajdzPojazd")
     public String znajdzPojazd(@ModelAttribute("pojazd")Pojazdy pojazd, Model theModel){

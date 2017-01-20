@@ -91,9 +91,10 @@ public class KierowcyController {
         return "starosta/kierowcy-edit-form-starosta";
     }
 
-    @GetMapping("usunKierowce")
+    @GetMapping("/usunKierowce")
     public String usunKierowce(@RequestParam("IdKierowcy") int idKierowcy){
         kierowcyService.usunKierowce(idKierowcy);
         return "redirect:/kierowcy/lista";
     }
+
 }

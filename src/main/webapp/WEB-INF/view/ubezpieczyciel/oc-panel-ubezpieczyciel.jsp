@@ -3,12 +3,13 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-    <title>Baza oc</title>
+    <title>Panel ${ubezpieczyciel}</title>
     <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<br>
 <div class="container bg-primary">
-    <h3>Panel ubezpieczyciela ${ubezpieczyciel}</h3>
+    <h2 class="text-center">Panel ubezpieczyciela ${ubezpieczyciel}</h2>
 
     <form:form action="przegladajOc" role="form" data-toggle="validator" modelAttribute="oc" cssClass="form-horizontal" method="POST">
         <form:hidden path="Ubezpieczyciel"/>
@@ -19,7 +20,8 @@
 
     </c:url>
     <a href="${dodajUbezpieczenie}" class="btn btn-success col-xs-12">Dodaj ubezpieczenie</a>
-
+    <div class="col-xs-12"><br></div>
+    <a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-danger col-xs-12">Wróć</a>
 </div>
 <div class="container bg-primary"><br></div>
 <script src="${pageContext.request.contextPath}/webjars/jquery/2.1.1/jquery.min.js"></script>
