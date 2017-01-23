@@ -43,7 +43,7 @@
         </div>
         <div class="col-xs-2"></div>
         <div class="col-xs-10">
-            <input class="btn btn-danger col-xs-1" value="Wróc" onClick="history.go(-1);return true;">
+            <input class="btn btn-danger col-xs-2" value="Wróc" onClick="history.go(-1);return true;">
             <c:choose>
                 <c:when  test="${pojazd.idOc==null}">
                     <input type="submit" value="Zapisz" class="btn btn-success"/>

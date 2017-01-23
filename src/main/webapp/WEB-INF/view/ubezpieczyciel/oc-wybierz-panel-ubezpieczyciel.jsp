@@ -13,8 +13,10 @@
 </div>
 <div class="container bg-primary">
     <br>
+    <div>
+        <div class="col-xs-1"></div>
     <form:form action="wejdzUbezpieczyciel" role="form" data-toggle="validator" modelAttribute="oc" cssClass="form-horizontal" method="POST">
-    <div class="form-group">
+    <div class="form-group col-xs-10">
         <form:select path="Ubezpieczyciel" id="ubezpieczycielInput" cssClass="selectpicker form-control">
             <form:option value="AVIVA Direct">AVIVA Direct</form:option>
             <form:option value="PZU">PZU</form:option>
@@ -25,7 +27,10 @@
         </form:select>
     </div>
         <div class="col-xs-1"></div>
-        <input type="submit" value="Wejdź" class="btn btn-success col-xs-10"/>
+    </div>
+    <div>
+        <input type="submit" value="Wejdź" class="btn btn-success col-xs-12"/>
+    </div>
     </form:form>
 </div>
 <div class="container bg-primary"><br></div>

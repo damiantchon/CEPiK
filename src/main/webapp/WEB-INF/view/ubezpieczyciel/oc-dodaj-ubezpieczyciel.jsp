@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +18,16 @@
         <div class="form-group">
             <div class="col-xs-12">
                 <form:input  path="NumerRejestracyjny" id="numerInput" cssClass="form-control" placeholder="np. WB9876M" required="required"/>
+                <br>
             </div>
-        </div>
-        <a href="${pageContext.request.contextPath}/oc/wejdzUbezpieczyciel" class="btn btn-danger col-xs-1">Wróć</a>
+            <c:choose>
+                <c:when  test="${pojazd.numerRejestracyjny!=null}">
+                    <h4 style="color: red;">Brak pojazdu o podanym numerze rejestracyjnym w bazie danych!</h4>
+                </c:when>
+                <c:otherwise>
+                </c:otherwise>
+            </c:choose>
+            <a href="${pageContext.request.contextPath}/oc/wejdzUbezpieczyciel" class="btn btn-danger col-xs-2">Wróć</a>
         <input class="btn btn-success col-xs-2" value="Wybierz" type="submit"/>
     </form:form>
 </div>

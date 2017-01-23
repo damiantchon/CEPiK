@@ -96,7 +96,7 @@ public class OcController {
         theModel.addAttribute("pojazdy", ocModel);
         return "ubezpieczyciel/oc-lista-ubezpieczyciel";
     }
-    @PostMapping("/znajdzPojazd")
+    @RequestMapping("/znajdzPojazd")
     public String znajdzPojazd(@ModelAttribute("pojazd")Pojazdy pojazd, Model theModel){
         Pojazdy pojazdModel = ocService.znajdzPojazd(pojazd);
         if(pojazdModel!=null){
@@ -108,6 +108,7 @@ public class OcController {
         theModel.addAttribute("oc",oc);
         if(pojazdModel==null){
             pojazdModel = new Pojazdy();
+            pojazdModel.setNumerRejestracyjny("");
             theModel.addAttribute("pojazd",pojazdModel);
             return "/ubezpieczyciel/oc-dodaj-ubezpieczyciel";
         }else{
