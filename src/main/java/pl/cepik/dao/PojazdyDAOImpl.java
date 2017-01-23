@@ -103,8 +103,20 @@ public class PojazdyDAOImpl implements PojazdyDAO {
         Session currentSession = sessionFactory.getCurrentSession();
         Query theQuery = currentSession.createQuery("from Kierowcy where idKierowcy=:param");
         theQuery.setParameter("param",pojazd.getIdKierowcy());
-        if(!theQuery.getResultList().isEmpty()) currentSession.saveOrUpdate(pojazd);
-        else if(pojazd.getIdKierowcy()==null) currentSession.saveOrUpdate(pojazd);
+        Query theQuery2 = currentSession.createQuery("from Oc where idOc=:param");
+        theQuery2.setParameter("param",pojazd.getIdOc());
+
+        if(!theQuery.getResultList().isEmpty()){
+            if(!theQuery2.getResultList().isEmpty()) currentSession.saveOrUpdate(pojazd);
+        }
+        else if(pojazd.getIdKierowcy()==null)
+        {
+            if(!theQuery2.getResultList().isEmpty()) currentSession.saveOrUpdate(pojazd);
+        }
+        else if(pojazd.getIdOc()==null)
+        {
+            if(!theQuery.getResultList().isEmpty()) currentSession.saveOrUpdate(pojazd);
+        }
     }
 
 }
